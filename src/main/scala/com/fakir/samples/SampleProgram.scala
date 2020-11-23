@@ -1,10 +1,10 @@
 package com.fakir.samples
 
 import org.apache.log4j.{Level, Logger}
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{DataFrame, SparkSession}
 
 
-
+/*
 object SampleProgram {
 
   def majuscule(s: String, filtre: String): String = {
@@ -23,5 +23,10 @@ object SampleProgram {
     val majRDD = rdd.map(elem => majuscule(elem, "Juventus"))
     val barcaRDD = majRDD.filter(elem => !elem.contains("Juventus"))
     barcaRDD.foreach(println)
+
+    val df: DataFrame = sparkSession.read.option("inferSchema", true).option("header", true).csv(path="data.csv")
+    df.show
+
   }
 }
+ */
